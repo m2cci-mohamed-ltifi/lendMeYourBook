@@ -1,6 +1,6 @@
 package com.education.lendmeyourbook.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -18,6 +18,8 @@ public class Adress {
     @ManyToOne
     private City city;
 
+    @ManyToOne
+    @JoinColumn(name = "state_id")
     private State state;
 
 }

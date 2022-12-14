@@ -1,6 +1,6 @@
 package com.education.lendmeyourbook.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import lombok.Data;
 
 import java.util.List;
