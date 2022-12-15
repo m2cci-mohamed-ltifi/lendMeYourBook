@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.logging.Logger;
 
 @Service
 public class CityService {
@@ -19,8 +20,12 @@ public class CityService {
 
     @Transactional
     public City save(City city){
+
         if(city.getState().getId()==null){
-            State state =stateRepository.save(city.getState());
+            State state =stateRepository.findByName(city.getState().getName());
+            if(state==null){
+                state = stateRepository.save(city.getState());
+            }
             city.setState(state);
         }
         city = cityRepository.save(city);

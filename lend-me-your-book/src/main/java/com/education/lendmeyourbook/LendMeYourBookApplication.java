@@ -14,28 +14,32 @@ public class LendMeYourBookApplication {
     public static void main(String[] args) {
         SpringApplication.run(LendMeYourBookApplication.class, args);
 
-        Logger logger = Logger.getLogger("Ayoub's");
+        /*Logger logger = Logger.getLogger("Ayoub's");
         try {
             File file = new File("C:/Users/Ltifi/Documents/gouv.txt");
-            FileWriter writer = new FileWriter(file.getPath()+"GouvsTempF.txt");
+            FileWriter writer = new FileWriter(file.getPath()+"mf.txt");
             Scanner scanner = new Scanner(file);
-            Set<String> set = new TreeSet<>();
+//            Set<String> set = new TreeSet<>();
 
             logger.info(scanner.next());
             while (scanner.hasNextLine()){
                 String[] line= scanner.nextLine().split("Gouvernorat");
                 String[] restOfLine=line[1].split("[0-9]");
-                set.add(restOfLine[0].substring(3).trim());
+//                set.add(restOfLine[0].substring(3).trim());
+                String gouv=restOfLine[0].substring(3).trim().replace("l\'","");
+                gouv=restOfLine[0].substring(3).trim().replace("la ","");
+                writer.write("{\"name\":\""+line[0].trim()+"\",\"state\":{\"name\":\""+gouv+"\"}},\n");
+
             }
 
-            for(String s: set){
+            *//*for(String s: set){
                 writer.write("{\"name\":\""+s+"\"},\n");
-            }
+            }*//*
             writer.close();
             scanner.close();
         } catch (Exception e) {
             logger.warning(e.getMessage());
-        }
+        }*/
 
 
     }
