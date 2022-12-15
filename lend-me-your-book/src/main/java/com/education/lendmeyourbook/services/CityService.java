@@ -20,7 +20,6 @@ public class CityService {
 
     @Transactional
     public City save(City city){
-
         if(city.getState().getId()==null){
             State state =stateRepository.findByName(city.getState().getName());
             if(state==null){
