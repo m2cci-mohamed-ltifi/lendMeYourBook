@@ -1,6 +1,8 @@
 package com.education.lendmeyourbook.entities;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import java.util.List;
@@ -23,9 +25,11 @@ public class Book {
     private BookCategory category;
 
     @OneToMany(mappedBy = "book")
+    @JsonBackReference(value = "bookBorriwingUsers")
     private List<UserBorrowedBook> borrowingUsers;
 
     @OneToMany(mappedBy = "book")
+    @JsonBackReference(value = "schoolsHavingBook")
     private List<SchoolHasBook> schools;
 
 }

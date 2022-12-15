@@ -28,7 +28,7 @@ public class User {
     @ManyToOne
     private Role role;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Adress adress;
 
 }
