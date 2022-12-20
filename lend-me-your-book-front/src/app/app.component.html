@@ -1,106 +1,113 @@
 <style>
-  /* .img {
-     opacity: 0.9;
-     position: absolute;
-     right: 0;
-     top: 0;
-     max-width: 100%;
-     height: auto;
-     width: auto;
-   } */
-  * {
-    margin: 0;
-    padding: 0;
-  }
-  .wrapper {
-    width: 1170px;
-    margin: auto;
-    display: inline-block;
-  }
-  header {
-    background: url(assets/images/books.jpg);
-    height: 100hv;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    position: relative;
-  }
-  .nav-area {
-    float: right;
-    list-style: none;
-    margin-top: 30px;
-  }
-  .nav-area li {
-    display: inline-block;
-  }
-  .nav-area li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 20px;
-    font-family: pappins;
-    font-size: 16px;
-  }
-  .nav-area li a:hover {
-    background-color: #fff;
-    color: #333;
-  }
-  .logo img {
-    width: 100px;
-    float: left;
-    height: auto;
-  }
   .welcome-text {
     position: relative;
-    width: 600px;
-    height: 300px;
-    margin: 20% 30%;
+    width: 100%;
+    height: 100%;
     text-align: center;
-    display: block;
+    display: inline-block;
   }
   .welcome-text h1 {
     text-align: center;
-    color: #fff;
     text-transform: uppercase;
     font-size: 60px;
+    color: #fff;
   }
   .welcome-text a {
-    bottom: 1px solid #fff;
+    border: 1px solid #fff;
     padding: 10px 25px;
     text-decoration: none;
     text-transform: uppercase;
     font-size: 14px;
-    display: inline-block;
     color: #fff;
   }
   .welcome-text a:hover {
     background: #fff;
     color: #333;
   }
+
+  .search-input {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+  .au-input-xl {
+    min-width: 200px;
+  }
+
+  input.au-input.au-input-xl {
+    border-radius: 40px 0px 0px 40px !important;
+    background-color: #f5f5f5;
+  }
+
+  .au-input {
+    line-height: 43px;
+    border: 1px solid #e5e5e5;
+    font-size: 14px;
+    color: #666;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .fa-search {
+    background-color: #c0c0c0;
+    height: 100%;
+    width: 40px;
+    line-height: 44.5px;
+    padding-left: 10px;
+    border-radius: 0px 40px 40px 0px !important;
+    border-color: #000;
+  }
+  hr {
+    color: #f5f5f5;
+  }
 </style>
 <body>
-  <!-- solid style -->
-  <!-- <div class="card">
-    <div class="card-header">Ayoub</div>
-    <div class="card-body">
-      <i class="fa-brands fa-facebook"></i>
+  <header class="info-bar row">
+    <div class="social-links col-md-3 align-self-center">
+      <i class="fa-brands fa-facebook-f"></i>
       <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-twitter"></i>
     </div>
-  </div> -->
-  <header>
-    <div class="wrapper">
-      <div class="logo">
-        <img src="assets/images/Fancy_Logo.png" alt="" />
-      </div>
-      <ul class="nav-area">
+    <div class="logo col-md-6">
+      <img src="assets/images/Logo3.png" alt="" />
+    </div>
+    <div class="search-input col-md-3 align-self-center">
+      <input
+        #myInput
+        type="text"
+        placeholder="Search for data ..."
+        class="au-input au-input-xl"
+      />
+      <i class="fas fa-search"></i>
+    </div>
+  </header>
+  <div class="app-body">
+    <div class="nav-bar row">
+      <ul class="nav-area col-md-12 d-flex justify-content-center">
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Services</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
+    <hr />
+  </div>
+  <!-- <header>
+    <div class="row">
+      <div class="wrapper col-md-12">
+        <div class="logo col-md-6">
+          <img src="assets/images/Fancy_Logo.png" alt="" />
+        </div>
+        
+      </div>
+    </div>
     <div class="welcome-text">
       <h1>We are Creative</h1>
       <a href="#">Contact Us</a>
     </div>
-  </header>
+  </header> -->
 </body>
