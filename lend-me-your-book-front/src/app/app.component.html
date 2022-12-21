@@ -1,10 +1,11 @@
 <style>
   .welcome-text {
     position: relative;
+    top: auto;
     width: 100%;
-    height: 100%;
+    height: 70%;
     text-align: center;
-    display: inline-block;
+    display: block;
   }
   .welcome-text h1 {
     text-align: center;
@@ -64,6 +65,16 @@
   hr {
     color: #f5f5f5;
   }
+  .footer-limiter {
+    position: relative;
+    height: 45%;
+    top: 15%;
+    bottom: 40%;
+    background-color: #fff;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
 </style>
 <body>
   <header class="info-bar row">
@@ -95,19 +106,28 @@
       </ul>
     </div>
     <hr />
+    <div class="welcome-text row"><h1>Ayoub2</h1></div>
+    <div class="footer-limiter row">
+      <div class="service-type col-md-12">Ayoubvv</div>
+    </div>
   </div>
-  <!-- <header>
+
+  <footer>
     <div class="row">
-      <div class="wrapper col-md-12">
-        <div class="logo col-md-6">
-          <img src="assets/images/Fancy_Logo.png" alt="" />
-        </div>
-        
+      <div
+        class="footer col-md-12 float-center"
+        style="
+          position: fixed;
+          z-index: 140;
+          background-color: #f0f0f0ee;
+          bottom: 0;
+          height: 18%;
+          color: #000;
+          font-size: 40px;
+        "
+      >
+        Ayoubs
       </div>
     </div>
-    <div class="welcome-text">
-      <h1>We are Creative</h1>
-      <a href="#">Contact Us</a>
-    </div>
-  </header> -->
+  </footer>
 </body>
