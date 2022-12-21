@@ -27,12 +27,16 @@
   }
 
   .search-input {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: right;
+    position: relative;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
   .au-input-xl {
-    min-width: 200px;
+    min-width: 180px;
   }
 
   input.au-input.au-input-xl {
@@ -43,6 +47,7 @@
   .au-input {
     line-height: 43px;
     border: 1px solid #e5e5e5;
+    padding-left: 10px;
     font-size: 14px;
     color: #666;
     -webkit-border-radius: 3px;
@@ -67,9 +72,8 @@
   }
   .footer-limiter {
     position: relative;
-    height: 45%;
-    top: 15%;
-    bottom: 40%;
+    height: 36%;
+    bottom: 18%;
     background-color: #fff;
     width: 100%;
     padding: 0px;
@@ -119,7 +123,7 @@
         style="
           position: fixed;
           z-index: 140;
-          background-color: #f0f0f0ee;
+          background-color: #e8e8e8;
           bottom: 0;
           height: 18%;
           color: #000;
