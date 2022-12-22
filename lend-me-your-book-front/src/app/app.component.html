@@ -2,9 +2,11 @@
   .welcome-text {
     position: relative;
     top: auto;
-    width: 100%;
-    height: 70%;
+    bottom: auto;
+    width: auto;
+    height: auto;
     text-align: center;
+    min-height: 400px;
     display: block;
   }
   .welcome-text h1 {
@@ -27,13 +29,14 @@
   }
 
   .search-input {
-    display: inline-flex;
+    display: inline;
     align-items: center;
     justify-content: right;
     position: relative;
     width: auto;
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0px;
+    padding-right: 10px;
+    text-align: center;
   }
   .au-input-xl {
     min-width: 180px;
@@ -60,7 +63,7 @@
   }
   .fa-search {
     background-color: #c0c0c0;
-    height: 100%;
+    height: auto;
     width: 40px;
     line-height: 44.5px;
     padding-left: 10px;
@@ -72,9 +75,10 @@
   }
   .footer-limiter {
     position: relative;
-    height: 36%;
-    bottom: 18%;
+    height: auto;
+    min-height: 200px;
     background-color: #fff;
+    display: block;
     width: 100%;
     padding: 0px;
     margin: 0px;
@@ -114,24 +118,24 @@
     <div class="footer-limiter row">
       <div class="service-type col-md-12">Ayoubvv</div>
     </div>
-  </div>
 
-  <footer>
-    <div class="row">
-      <div
-        class="footer col-md-12 float-center"
-        style="
-          position: fixed;
-          z-index: 140;
-          background-color: #e8e8e8;
-          bottom: 0;
-          height: 18%;
-          color: #000;
-          font-size: 40px;
-        "
-      >
-        Ayoubs
-      </div>
+    <div
+      class="footer"
+      style="
+        position: relative;
+        display: block;
+        z-index: 140;
+        background-color: #e8e8e8;
+        bottom: 0px;
+        height: auto;
+        width: auto;
+        color: #000;
+        font-size: 40px;
+        margin: 0;
+        text-align: center;
+      "
+    >
+      <div class="col-md-12">Ayoubs</div>
     </div>
-  </footer>
+  </div>
 </body>
