@@ -19,6 +19,22 @@
   width: 100%;
   margin-top: 16px;
 }
+.welcome-text{
+  font-family: adobe arabic;
+  height: auto;
+  margin: 16px;
+}
+.welcome-text img{
+  height: 200px;
+    width: 200px;
+  border-radius: 50px;
+}
+.welcome-text h1{
+  text-align: justify;
+}
+.welcome-text div{
+  display: flex;
+  justify-content: center;}
 .nav-area {
   list-style: none;
   display: flex;
