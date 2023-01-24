@@ -1,67 +1,120 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  .header {
-    position:absolute;
-    display: inline-block;
-  }
-  .app-body {
-    background: url(../assets/images/books.jpg) no-repeat center center fixed;
-    position: absolute;
-    top: auto;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    margin-top: 16px; 
-  }
-  .nav-area {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: right;
-    padding: 16px;
-  }
-  .nav-area li {
-    display: inline-block;
-  }
-  .nav-area li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 20px;
-    margin:16px;
-    font-family: pappins;
-    font-size: 16px;
-  }
-  .nav-area li a:hover {
-    background-color: #fff;
-    color: #333;border-radius: 20px;
-  }
-  .search-bar{
-    height: auto;
-  }
-  .logo{
-  }
-  .logo img {
-    padding-top: 8px;;
-    position: relative;
-    width: auto;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .social-links{
-    text-align: center;
-   }
-  i.fa-brands {
-      padding: 8px;
-      border-radius: 100px;
-      border: 1px solid #333;
-      font-size: 25px;
-      margin-right: 6px;
-      margin-left: 6px;
-  }
+  margin: 0;
+  padding: 0;
+}
+.header {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+}
+.app-body {
+  background: url(../assets/images/books.jpg) no-repeat center center fixed;
+  position: flex;
+  top: 70px;
+  bottom: 0px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 100%;
+  margin-top: 16px;
+}
+.nav-area {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 16px;
+}
+.nav-area li {
+  display: inline-block;
+}
+.nav-area li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 20px;
+  margin: 16px;
+  font-family: pappins;
+  font-size: 16px;
+}
+.nav-area li a:hover {
+  background-color: #fff;
+  color: #333;
+  border-radius: 20px;
+}
+.search-bar {
+  height: auto;
+}
+.logo {
+}
+.logo img {
+  padding-top: 8px;
+  position: relative;
+  width: auto;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.social-links {
+  text-align: center;
+}
+i.fa-brands {
+  padding: 8px;
+  border-radius: 100px;
+  border: 1px solid #333;
+  font-size: 25px;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+.footer-limiter {
+  position: relative;
+  height: auto;
+  min-height: 200px;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.footer-limiter div {
+  display: flex;
+  justify-content: center;
+}
+
+.donor-user {
+  position: relative;
+  top: -120px;
+  border: 10px;
+  height: 200px;
+  width: 200px;
+  border-radius: 200px;
+}
+.donor-user img {
+  border: 1px solid #333;
+  height: 240px;
+  width: 240px;
+  border-radius: 240px;
+}
+.borrower-user {
+  position: relative;
+  top: -120px;
+}
+.borrower-user img {
+  border: 1px solid #333;
+  height: 240px;
+  width: 240px;
+  border-radius: 240px;
+}
+.footer-limiter a {
+  color: #fff;
+  border: 0px;
+  text-decoration: none;
+  padding: 0 10px 0 10px;
+  margin: 36px;
+  font-family: pappins;
+  font-size: 30px;
+}
+.footer-limiter a:hover {
+  background-color: #fff;
+  color: black;
+  border-radius: 20px;
+}

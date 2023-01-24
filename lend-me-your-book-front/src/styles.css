@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+app-root{
+    position: absolute;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    display: -ms-flex;
+        display: -webkit-flex;
+        display: flex;
+}
