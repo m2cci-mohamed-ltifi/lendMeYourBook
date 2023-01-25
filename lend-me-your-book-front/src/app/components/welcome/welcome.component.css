@@ -1,0 +1,95 @@
+.welcome-text {
+    font-family: adobe arabic;
+    display: flex;
+    margin: 16px;
+}
+
+.welcome-text h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 60px;
+    color: #fff;
+    min-height: 400px;
+}
+
+.welcome-text a {
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #fff;
+}
+
+.welcome-text a:hover {
+    background: #fff;
+    color: #333;
+}
+.welcome-text img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50px;
+}
+
+.welcome-text div {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-limiter {
+    position: relative;
+    height: auto;
+    min-height: 200px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.footer-limiter div {
+    display: flex;
+    justify-content: center;
+}
+
+.donor-user {
+    position: relative;
+    top: -120px;
+    border: 10px;
+    height: 200px;
+    width: 200px;
+    border-radius: 200px;
+}
+
+.donor-user img {
+    border: 1px solid #333;
+    height: 240px;
+    width: 240px;
+    border-radius: 240px;
+}
+
+.borrower-user {
+    position: relative;
+    top: -120px;
+}
+
+.borrower-user img {
+    border: 1px solid #333;
+    height: 240px;
+    width: 240px;
+    border-radius: 240px;
+}
+
+.footer-limiter a {
+    color: #fff;
+    border: 0px;
+    text-decoration: none;
+    padding: 0 10px 0 10px;
+    margin: 36px;
+    font-family: pappins;
+    font-size: 30px;
+}
+
+.footer-limiter a:hover {
+    background-color: #fff;
+    color: black;
+    border-radius: 20px;
+}

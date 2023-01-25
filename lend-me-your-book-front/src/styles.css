@@ -9,7 +9,7 @@ app-root{
     flex-direction: column;
     height: 100%;
     width: 100%;
-    display: -ms-flex;
-        display: -webkit-flex;
-        display: flex;
+}
+hr {
+    color: #f5f5f5;
 }
