@@ -1,0 +1,75 @@
+.info-bar {
+  display: flex;
+}
+.search-input {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  position: relative;
+  width: auto;
+  margin-left: 0px;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.au-input-xl {
+  min-width: 180px;
+}
+
+input.au-input.au-input-xl {
+  border-radius: 40px 0px 0px 40px !important;
+  background-color: #f5f5f5;
+}
+
+.au-input {
+  line-height: 43px;
+  border: 1px solid #e5e5e5;
+  padding-left: 10px;
+  font-size: 14px;
+  color: #666;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.search-bar {
+  height: auto;
+}
+
+.logo {
+}
+
+.logo img {
+  padding-top: 8px;
+  position: relative;
+  width: auto;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.social-links {
+  text-align: center;
+}
+
+i.fa-brands {
+  padding: 8px;
+  border-radius: 100px;
+  border: 1px solid #333;
+  font-size: 25px;
+  margin-right: 6px;
+  margin-left: 6px;
+}
+.fa-search {
+  background-color: #c0c0c0;
+  height: 47px;
+  width: 40px;
+  line-height: 44.5px;
+  padding-left: 10px;
+  border-radius: 0px 40px 40px 0px !important;
+  border-color: #000;
+}

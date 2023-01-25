@@ -19,23 +19,6 @@
   width: 100%;
   margin-top: 16px;
 }
-.welcome-text{
-  font-family: adobe arabic;
-  display:flex;
-  height: auto;
-  margin: 16px;
-}
-.welcome-text img{
-  height: 150px;
-    width: 150px;
-  border-radius: 50px;
-}
-.welcome-text h1{
-  text-align: justify;
-}
-.welcome-text div{
-  display: flex;
-  justify-content: center;}
 .nav-area {
   list-style: none;
   display: flex;
@@ -83,55 +66,4 @@ i.fa-brands {
   font-size: 25px;
   margin-right: 6px;
   margin-left: 6px;
-}
-.footer-limiter {
-  position: relative;
-  height: auto;
-  min-height: 200px;
-  width: 100%;
-  padding: 0px;
-  margin: 0px;
-}
-.footer-limiter div {
-  display: flex;
-  justify-content: center;
-}
-
-.donor-user {
-  position: relative;
-  top: -120px;
-  border: 10px;
-  height: 200px;
-  width: 200px;
-  border-radius: 200px;
-}
-.donor-user img {
-  border: 1px solid #333;
-  height: 240px;
-  width: 240px;
-  border-radius: 240px;
-}
-.borrower-user {
-  position: relative;
-  top: -120px;
-}
-.borrower-user img {
-  border: 1px solid #333;
-  height: 240px;
-  width: 240px;
-  border-radius: 240px;
-}
-.footer-limiter a {
-  color: #fff;
-  border: 0px;
-  text-decoration: none;
-  padding: 0 10px 0 10px;
-  margin: 36px;
-  font-family: pappins;
-  font-size: 30px;
-}
-.footer-limiter a:hover {
-  background-color: #fff;
-  color: black;
-  border-radius: 20px;
 }
