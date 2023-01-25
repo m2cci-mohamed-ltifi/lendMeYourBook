@@ -1,1 +1,29 @@
-<p>donor works!</p>
+<div class="donor">
+  <form [formGroup]="donorFormGroup" (ngSubmit)="onSubmit()">
+    <div *ngIf="books.length > 0">
+      <div *ngFor="let book of books; let i = index">
+        <div formGroupName="books">
+          <div formGroupName="book_{{ i }}">
+            <input
+              type="text"
+              formControlName="bookName"
+              name="bookName"
+              (keyup)="onKeyUp()"
+            />
+
+            <select
+              formControlName="bookName"
+              name="bookName"
+              value="Select a category "
+            >
+              <option>Exercise Book</option>
+              <option>Lecture Book</option>
+              <option>Book</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+    <input type="button" value="add book" (click)="addBookToFormGroup()" />
+  </form>
+</div>

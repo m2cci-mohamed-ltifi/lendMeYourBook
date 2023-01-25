@@ -42,28 +42,3 @@
   color: #333;
   border-radius: 20px;
 }
-.search-bar {
-  height: auto;
-}
-.logo {
-}
-.logo img {
-  padding-top: 8px;
-  position: relative;
-  width: auto;
-  height: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.social-links {
-  text-align: center;
-}
-i.fa-brands {
-  padding: 8px;
-  border-radius: 100px;
-  border: 1px solid #333;
-  font-size: 25px;
-  margin-right: 6px;
-  margin-left: 6px;
-}
