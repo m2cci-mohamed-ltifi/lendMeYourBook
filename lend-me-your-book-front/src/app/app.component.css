@@ -9,8 +9,9 @@
 }
 .app-body {
   background: url(../assets/images/books.jpg) no-repeat center center fixed;
-  position: flex;
+  display: flex;
   top: 70px;
+  min-height: 100%;
   bottom: 0px;
   -webkit-background-size: cover;
   -moz-background-size: cover;

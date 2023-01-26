@@ -43,9 +43,9 @@ export class DonorComponent implements OnInit, OnChanges {
   addBookToFormGroup() {
     const group: any = {};
 
-    this.books.push(new Book());
-    group['book_' + (this.books.length - 1)] = this.newBookGroup(new Book());
+    group['book_' + this.books.length] = this.newBookGroup(new Book());
 
+    this.books.push(new Book());
     const groupBooks = new FormGroup(group);
     const bookListControls = this.donorFormGroup.controls['books'];
     if (bookListControls instanceof FormGroup) {

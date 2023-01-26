@@ -1,0 +1,51 @@
+input {
+  background-color: transparent;
+
+  color: white;
+  border-radius: 10px;
+  height: 40px;
+  width: 340px;
+  border-color: azure;
+}
+
+input[type="button"] {
+  background-color: white;
+  opacity: 100%;
+}
+
+.form-area {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  margin: 16px 100px 16px 100px;
+  padding: 16px 0 16px 0;
+  justify-content: center;
+  line-height: 0;
+  text-align: left;
+}
+
+fieldset legend {
+  color: #ffffff;
+  margin-left: 116px;
+}
+fieldset {
+  border: 10px solid transparent;
+  box-sizing: border-box;
+  grid-area: 1 / 1;
+  margin-left: 30px;
+  width: inherit;
+}
+.form-area > div {
+  display: flex;
+  flex-direction: row;
+  padding: 16px;
+}
+.form-area label {
+  color: azure;
+  display: flex;
+  font-size: 27px;
+  justify-content: center;
+}
+.form-area input {
+  text-align: center;
+}
