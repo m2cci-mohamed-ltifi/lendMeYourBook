@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/cities")
+@CrossOrigin("http://localhost:4200")
 public class CityController {
     @Autowired
     private CityRepository cityRepository;

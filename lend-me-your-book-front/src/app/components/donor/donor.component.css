@@ -12,12 +12,14 @@ button {
   background-color: transparent;
   color: white;
   border-radius: 10px;
-  position: relative;
-  justify-content: end;
   height: 40px;
   width: 340px;
   border-color: azure;
   margin: 16px;
+  justify-self: right;
+}
+.button {
+  display: inline-flex;
 }
 select:focus {
   color: black;
@@ -41,7 +43,8 @@ select:has(option:selected) {
 
 legend {
   color: #ffffff;
-  margin-left: 116px;
+  margin: 16px 0 16px 150px;
+  width: auto;
 }
 fieldset {
   border: 10px solid transparent;

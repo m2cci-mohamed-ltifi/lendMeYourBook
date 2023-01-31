@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/states")
+@CrossOrigin("http://localhost:4200")
 public class StateController {
 
     @Autowired

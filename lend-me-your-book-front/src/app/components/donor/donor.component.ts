@@ -7,6 +7,9 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Book } from 'src/app/common/book';
+import { City } from 'src/app/common/city';
+import { State } from 'src/app/common/state';
+import { DonorService } from 'src/app/services/donor.service';
 
 @Component({
   selector: 'app-donor',
@@ -18,8 +21,16 @@ export class DonorComponent implements OnInit, OnChanges {
   levels = [1, 2, 3, 4, 5, 6];
   donorFormGroup!: FormGroup;
   booksFormGroup = new FormGroup({});
+  cities: City[];
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {}
+  allCities: City[];
+  states: State[];
+
+  constructor(
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private donorService: DonorService
+  ) {}
 
   ngOnInit(): void {
     this.donorFormGroup = this.formBuilder.group({
@@ -36,7 +47,13 @@ export class DonorComponent implements OnInit, OnChanges {
 
       books: this.booksFormGroup,
     });
-
+    this.donorService.getCities().subscribe((cities) => {
+      this.cities = cities;
+      this.allCities = cities;
+    });
+    this.donorService.getStates().subscribe((states) => {
+      this.states = states;
+    });
     this.addBookToFormGroup();
   }
 
@@ -75,5 +92,22 @@ export class DonorComponent implements OnInit, OnChanges {
     });
     return newBookGroup;
   }
-  onSubmit() {}
+  onSubmit() {
+    console.log('ayoubTest');
+  }
+  updateState() {
+    const id = this.donorFormGroup.get('school')?.value.city.state.id;
+    const state = this.states.find((state) => {
+      return state.id === id;
+    });
+    this.donorFormGroup.controls['school'].patchValue({ state: state });
+    this.updateCities();
+  }
+  updateCities() {
+    const id = this.donorFormGroup.get('school')?.value.state.id;
+    console.log('ayoub' + id);
+    this.cities = this.allCities.filter((city) => {
+      return city.state.id === id;
+    });
+  }
 }
