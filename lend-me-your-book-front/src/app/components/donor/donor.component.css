@@ -1,19 +1,34 @@
-input {
+input,
+select {
   background-color: transparent;
-
   color: white;
   border-radius: 10px;
   height: 40px;
   width: 340px;
   border-color: azure;
+  margin: 16px;
+}
+button {
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  position: relative;
+  justify-content: end;
+  height: 40px;
+  width: 340px;
+  border-color: azure;
+  margin: 16px;
+}
+select:focus {
+  color: black;
 }
 
-input[type="button"] {
-  background-color: white;
-  opacity: 100%;
+select:has(option:selected) {
+  color: white;
 }
 
 .form-area {
+  display: flex;
   display: block;
   border: 1px solid #ccc;
   border-radius: 20px;
@@ -24,7 +39,7 @@ input[type="button"] {
   text-align: left;
 }
 
-fieldset legend {
+legend {
   color: #ffffff;
   margin-left: 116px;
 }
@@ -38,13 +53,13 @@ fieldset {
 .form-area > div {
   display: flex;
   flex-direction: row;
-  padding: 16px;
 }
 .form-area label {
   color: azure;
   display: flex;
   font-size: 27px;
   justify-content: center;
+  align-items: center;
 }
 .form-area input {
   text-align: center;

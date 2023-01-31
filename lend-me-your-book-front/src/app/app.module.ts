@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { DonorComponent } from './components/donor/donor.component';
 import { HeaderComponent } from './components/header/header.component';
+import { BorrowerComponent } from './components/borrower/borrower.component';
 
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
     WelcomeComponent,
     DonorComponent,
     HeaderComponent,
+    BorrowerComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

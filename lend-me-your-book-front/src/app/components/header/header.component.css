@@ -4,11 +4,9 @@
 .search-input {
   display: flex;
   align-items: center;
-  justify-content: right;
+  /* justify-content: right; */
   position: relative;
   width: auto;
-  margin-left: 0px;
-  padding-right: 10px;
   text-align: center;
 }
 

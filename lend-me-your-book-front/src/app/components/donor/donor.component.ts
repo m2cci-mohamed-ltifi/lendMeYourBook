@@ -15,6 +15,7 @@ import { Book } from 'src/app/common/book';
 })
 export class DonorComponent implements OnInit, OnChanges {
   books: Array<Book> = new Array();
+  levels = [1, 2, 3, 4, 5, 6];
   donorFormGroup!: FormGroup;
   booksFormGroup = new FormGroup({});
 
@@ -27,6 +28,12 @@ export class DonorComponent implements OnInit, OnChanges {
         city: new FormControl('', [Validators.required]),
         name: new FormControl(''),
       }),
+      user: this.formBuilder.group({
+        firstName: new FormControl('', [Validators.required]),
+        lastName: new FormControl('', [Validators.required]),
+        level: new FormControl(this.levels[0] + ' year'),
+      }),
+
       books: this.booksFormGroup,
     });
 
@@ -51,6 +58,7 @@ export class DonorComponent implements OnInit, OnChanges {
     if (bookListControls instanceof FormGroup) {
       this.donorFormGroup = this.formBuilder.group({
         school: this.donorFormGroup.controls['school'],
+        user: this.donorFormGroup.controls['user'],
         books: this.formBuilder.group({
           ...bookListControls.controls,
           ...groupBooks.controls,
@@ -62,8 +70,8 @@ export class DonorComponent implements OnInit, OnChanges {
   }
   newBookGroup(book: Book): FormGroup {
     const newBookGroup = new FormGroup({
-      bookName: new FormControl(book.name),
-      bookCategory: new FormControl(book.category),
+      bookName: new FormControl(''),
+      bookCategory: new FormControl('Book'),
     });
     return newBookGroup;
   }
