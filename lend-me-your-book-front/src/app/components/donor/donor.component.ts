@@ -127,6 +127,11 @@ export class DonorComponent implements OnInit, OnChanges {
     });
     return newBookGroup;
   }
+  deleteBootAt(index: number) {
+    if (this.books.length > 1) {
+      this.books.removeAt(index);
+    }
+  }
   onSubmit() {
     const donation = new Donation();
     const school = new School();

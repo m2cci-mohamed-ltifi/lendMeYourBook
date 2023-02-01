@@ -4,9 +4,14 @@ select {
   color: white;
   border-radius: 10px;
   height: 40px;
-  width: 340px;
+  width: 250px;
   border-color: azure;
   margin: 16px;
+  display: flex;
+}
+
+option {
+  display: inline-block;
 }
 button {
   background-color: transparent;
@@ -28,7 +33,6 @@ select:focus {
 select:has(option:selected) {
   color: white;
 }
-
 .form-area {
   display: flex;
   display: block;
@@ -41,10 +45,22 @@ select:has(option:selected) {
   text-align: left;
 }
 
+p {
+  color: #ffffff;
+  align-self: center;
+  font-size: 30px;
+  text-align: end;
+  margin-left: 16px;
+}
+div > legend {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+}
+
 legend {
   color: #ffffff;
-  margin: 16px 0 16px 150px;
-  width: auto;
+  padding: 16px 160px 16px 0px;
 }
 fieldset {
   border: 10px solid transparent;
@@ -54,8 +70,6 @@ fieldset {
   width: inherit;
 }
 .form-area > div {
-  display: flex;
-  flex-direction: row;
 }
 .form-area label {
   color: azure;

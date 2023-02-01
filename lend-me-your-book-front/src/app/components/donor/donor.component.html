@@ -1,8 +1,12 @@
 <div class="donor">
   <form [formGroup]="donorFormGroup" (ngSubmit)="onSubmit()">
-    <legend>معلومات المدرسة</legend>
+    <div class="row d-flex">
+      <div class="col-md-12">
+        <legend>معلومات المدرسة</legend>
+      </div>
+    </div>
     <div formGroupName="school" name="school" class="school form-area">
-      <div class="row">
+      <div class="row d-flex flex-row-reverse">
         <label class="col-md-6"> ولاية </label>
         <select
           formControlName="state"
@@ -15,7 +19,7 @@
           </option>
         </select>
       </div>
-      <div class="row">
+      <div class="row d-flex flex-row-reverse">
         <label class="col-md-6"> المدينة </label>
         <select
           formControlName="city"
@@ -28,7 +32,7 @@
           </option>
         </select>
       </div>
-      <div class="row">
+      <div class="row d-flex flex-row-reverse">
         <label class="col-md-6"> اسم المدرسة</label>
         <input
           formControlName="name"
@@ -39,9 +43,13 @@
       </div>
     </div>
 
-    <legend>معلومات المستخدم</legend>
+    <div class="row d-flex">
+      <div class="col-md-12">
+        <legend>معلومات المستخدم</legend>
+      </div>
+    </div>
     <div formGroupName="user" class="form-area">
-      <div class="row">
+      <div class="row d-flex flex-row-reverse">
         <label class="col-md-6"> الاسم </label>
         <input
           type="text"
@@ -50,7 +58,7 @@
           class="col-md-6"
         />
       </div>
-      <div class="row">
+      <div class="row d-flex flex-row-reverse">
         <label class="col-md-6"> اسم العائلة </label>
         <input
           formControlName="lastName"
@@ -59,7 +67,7 @@
           class="col-md-6"
         />
       </div>
-      <div class="row">
+      <div class="row d-flex flex-row-reverse">
         <label class="col-md-6"> مستوى الدراسة </label>
 
         <select formControlName="level" name="level">
@@ -68,43 +76,79 @@
       </div>
     </div>
 
-    <legend>معلومات عن الكتب</legend>
+    <div class="row d-flex">
+      <div class="col-md-12">
+        <legend>معلومات عن الكتب</legend>
+      </div>
+    </div>
     <div *ngIf="books.length > 0">
-      <div formGroupName="books" class="form-area">
+      <div formGroupName="books" class="form-area books">
         <div *ngFor="let book of books.controls; let i = index">
           <div formGroupName="{{ i }}">
-            <input
-              type="text"
-              formControlName="name"
-              name="name"
-              class="col-md-6 justify-content-center"
-            />
-            <div formGroupName="category">
-              <select formControlName="name" name="name">
-                <option
-                  *ngFor="let subject of subjects; let i = index"
-                  [ngValue]="subject"
-                >
-                  {{ subjectsTraduction[i] }}
-                </option>
-              </select>
-              <select formControlName="type" name="type">
-                <option selected disabled>-- الرجاء تحديد خيار --</option>
-                <option>كتاب التمارين</option>
-                <option>كتاب القراءة</option>
-                <option>كتاب موازي</option>
-              </select>
-              <select formControlName="level" name="level">
-                <option *ngFor="let level of levels" [ngValue]="level">
-                  {{ litteralLevel[level - 1] }}
-                </option>
-              </select>
+            <div class="row d-flex flex-row-reverse" style="margin-right: 60px">
+              <button
+                type="button"
+                class="btn-close btn-close-white close-button col-md-3 d-inline-block m-0 p-0"
+                aria-label="Close"
+                style="width: 40px; height: 40px; align-self: center"
+                (click)="deleteBootAt(i)"
+              ></button>
+              <p class="col-md-9 d-inline-block align-self-center m-0 p-0">
+                : {{ i + 1 }} الكتاب رقم
+              </p>
             </div>
+            <div class="row d-flex flex-row-reverse">
+              <label class="col-md-6"> اسم الكتاب </label>
+              <input
+                type="text"
+                formControlName="name"
+                name="name"
+                class="col-md-6"
+              />
+            </div>
+            <div formGroupName="category">
+              <div class="row d-flex flex-row-reverse">
+                <label class="col-md-6"> اسم المادة </label>
+                <select formControlName="name" name="name" class="col-md-6">
+                  <option
+                    *ngFor="let subject of subjects; let i = index"
+                    [ngValue]="subject"
+                  >
+                    {{ subjectsTraduction[i] }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="row d-flex flex-row-reverse">
+                <label class="col-md-6"> نوع الكتاب </label>
+                <select formControlName="type" name="type" class="col-md-6">
+                  <option selected disabled>-- الرجاء تحديد خيار --</option>
+                  <option>كتاب التمارين</option>
+                  <option>كتاب القراءة</option>
+                  <option>كتاب موازي</option>
+                </select>
+              </div>
+
+              <div class="row d-flex flex-row-reverse">
+                <label class="col-md-6"> المستوى الدراسي</label>
+                <select formControlName="level" name="level" class="col-md-6">
+                  <option *ngFor="let level of levels" [ngValue]="level">
+                    {{ litteralLevel[level - 1] }}
+                  </option>
+                </select>
+              </div>
+            </div>
+
+            <hr *ngIf="i < books.controls.length - 1" />
           </div>
         </div>
         <div class="add-button row">
-          <div class="com-md-12">
-            <button value="add book" (click)="addBookToFormGroup()">
+          <div class="com-md-12 text-center">
+            <button
+              type="button"
+              value="add book"
+              (click)="addBookToFormGroup()"
+            >
               أضف كتابا
             </button>
           </div>
