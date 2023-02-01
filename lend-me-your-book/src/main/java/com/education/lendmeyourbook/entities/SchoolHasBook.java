@@ -16,4 +16,7 @@ public class SchoolHasBook {
 
     @ManyToOne
     private School school;
+
+    @Column(name = "totalNumber")
+    private Integer totalNumber;
 }

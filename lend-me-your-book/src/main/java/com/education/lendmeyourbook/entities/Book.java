@@ -21,9 +21,6 @@ public class Book {
     private String name;
 
 
-    @Column(name = "totalNumber")
-    private Integer totalNumber;
-
     @ManyToOne
     private BookCategory category;
 

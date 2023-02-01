@@ -5,6 +5,7 @@ import com.education.lendmeyourbook.entities.Donation;
 import com.education.lendmeyourbook.repositories.BookRepository;
 import com.education.lendmeyourbook.services.DonationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,8 +24,12 @@ public class DonationController {
     private BookRepository bookRepository;
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public void registerDonation(@RequestBody Donation donation){
-        //System.out.println(donation.getBooks().get(0).getCategory().getName());
-        this.donationService.registerDonation(donation);
+    public HttpStatus registerDonation(@RequestBody Donation donation){
+        try {
+            this.donationService.registerDonation(donation);
+            return HttpStatus.ACCEPTED;
+        } catch(Exception e){
+            return HttpStatus.BAD_REQUEST;
+        }
     }
 }
