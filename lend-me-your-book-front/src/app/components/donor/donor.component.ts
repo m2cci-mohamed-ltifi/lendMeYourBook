@@ -22,6 +22,40 @@ import { DonorService } from 'src/app/services/donor.service';
 })
 export class DonorComponent implements OnInit, OnChanges {
   levels = [1, 2, 3, 4, 5, 6];
+  litteralLevel = [
+    'السنة الأولى ',
+    'السنة الثانية ',
+    'السنة الثالثة ',
+    'السنة الرابعة ',
+    'السنة الخامسة ',
+    'السنة السادسة ',
+  ];
+  subjects = [
+    'SCIENCE',
+    'MATH',
+    'TECHNOLOGY',
+    'ARABIC',
+    'FRENCH',
+    'ENGLISH',
+    'CIVIC_EDUCATION',
+    'ISLAMIC_EDUCATION',
+    'ART',
+    'SPORT',
+    'HISTORY_GEOGRAPHY',
+  ];
+  subjectsTraduction = [
+    'علوم',
+    'رياضيات',
+    'تقنية',
+    'عربى',
+    'الفرنسية',
+    'الإنجليزية',
+    'التعليم المدني',
+    'تربية اسلامية',
+    'فن',
+    'رياضة',
+    'تاريخ و جغرافيا',
+  ];
   donorFormGroup!: FormGroup;
   booksFormGroup = new FormArray([]);
   cities: City[];
@@ -38,14 +72,14 @@ export class DonorComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.donorFormGroup = this.formBuilder.group({
       school: this.formBuilder.group({
-        state: new FormControl('', [Validators.required]),
-        city: new FormControl('', [Validators.required]),
-        name: new FormControl(''),
+        state: this.formBuilder.control('', [Validators.required]),
+        city: this.formBuilder.control('', [Validators.required]),
+        name: this.formBuilder.control(''),
       }),
       user: this.formBuilder.group({
-        firstName: new FormControl('', [Validators.required]),
-        lastName: new FormControl('', [Validators.required]),
-        level: new FormControl(''),
+        firstName: this.formBuilder.control('', [Validators.required]),
+        lastName: this.formBuilder.control('', [Validators.required]),
+        level: this.formBuilder.control(''),
       }),
 
       books: this.booksFormGroup,
@@ -64,13 +98,8 @@ export class DonorComponent implements OnInit, OnChanges {
     return this.donorFormGroup.controls['books'] as FormArray;
   }
 
-  ngOnChanges() {
-    //console.log(this.donorFormGroup.controls);
-  }
+  ngOnChanges() {}
 
-  onKeyUp() {
-    //console.log(this.donorFormGroup.controls);
-  }
   addBookToFormGroup() {
     const bookGroup = this.newBookGroup(new Book());
 
@@ -86,13 +115,15 @@ export class DonorComponent implements OnInit, OnChanges {
     //     }),
     //   });
     // }
-
-    //console.log(this.donorFormGroup.controls['books'].value);
   }
   newBookGroup(book: Book): FormGroup {
     const newBookGroup = new FormGroup({
-      bookName: new FormControl(''),
-      bookCategory: new FormControl('Book'),
+      name: this.formBuilder.control(''),
+      category: this.formBuilder.group({
+        name: this.formBuilder.control(''),
+        type: this.formBuilder.control(''),
+        level: this.formBuilder.control(''),
+      }),
     });
     return newBookGroup;
   }
@@ -121,7 +152,6 @@ export class DonorComponent implements OnInit, OnChanges {
   }
   updateCities() {
     const id = this.donorFormGroup.get('school')?.value.state.id;
-    //console.log('ayoub' + id);
     this.cities = this.allCities.filter((city) => {
       return city.state.id === id;
     });

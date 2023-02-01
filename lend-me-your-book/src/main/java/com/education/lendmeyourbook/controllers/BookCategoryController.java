@@ -1,11 +1,13 @@
 package com.education.lendmeyourbook.controllers;
 
+import com.education.lendmeyourbook.entities.CategoryName;
 import com.education.lendmeyourbook.repositories.BookCategoryRepository;
 import com.education.lendmeyourbook.entities.BookCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,6 +21,11 @@ public class BookCategoryController {
     @GetMapping
     public List<BookCategory> list(){
         return bookCategoryRepository.findAll();
+    }
+
+    @GetMapping("/categoryNames")
+    public List<CategoryName> listCategoryNames(){
+        return Arrays.asList(CategoryName.values());
     }
 
     @GetMapping

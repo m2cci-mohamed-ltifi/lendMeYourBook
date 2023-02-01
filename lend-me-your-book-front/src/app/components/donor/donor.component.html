@@ -75,18 +75,31 @@
           <div formGroupName="{{ i }}">
             <input
               type="text"
-              formControlName="bookName"
-              name="bookName"
+              formControlName="name"
+              name="name"
               class="col-md-6 justify-content-center"
-              (keyup)="onKeyUp()"
             />
-
-            <select formControlName="bookCategory" name="bookCategory">
-              <option selected disabled>-- الرجاء تحديد خيار --</option>
-              <option>كتاب التمارين</option>
-              <option>كتاب القراءة</option>
-              <option>كتاب موازي</option>
-            </select>
+            <div formGroupName="category">
+              <select formControlName="name" name="name">
+                <option
+                  *ngFor="let subject of subjects; let i = index"
+                  [ngValue]="subject"
+                >
+                  {{ subjectsTraduction[i] }}
+                </option>
+              </select>
+              <select formControlName="type" name="type">
+                <option selected disabled>-- الرجاء تحديد خيار --</option>
+                <option>كتاب التمارين</option>
+                <option>كتاب القراءة</option>
+                <option>كتاب موازي</option>
+              </select>
+              <select formControlName="level" name="level">
+                <option *ngFor="let level of levels" [ngValue]="level">
+                  {{ litteralLevel[level - 1] }}
+                </option>
+              </select>
+            </div>
           </div>
         </div>
         <div class="add-button row">

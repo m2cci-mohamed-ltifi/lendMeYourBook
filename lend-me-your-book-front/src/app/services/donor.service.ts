@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { City } from '../common/city';
@@ -18,10 +18,16 @@ export class DonorService {
   getStates(): Observable<any> {
     return this.http.get(this.apiUrl + 'states');
   }
+  getCategories(): Observable<any> {
+    return this.http.get(this.apiUrl + 'bookCategories/categoryNames');
+  }
 
   register(donation: Donation) {
+    var headers = new Headers({ 'Content-Type': 'application/json' });
     this.http
-      .post(this.apiUrl + 'donation', JSON.stringify(donation))
+      .post(this.apiUrl + 'donation', JSON.stringify(donation), {
+        headers: new HttpHeaders().set('Content-Type', 'application/json'),
+      })
       .subscribe((res) => {
         console.log(res);
       });
