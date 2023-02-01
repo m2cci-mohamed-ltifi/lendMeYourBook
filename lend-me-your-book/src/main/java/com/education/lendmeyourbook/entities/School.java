@@ -11,6 +11,7 @@ import java.util.List;
 public class School {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
     @Column(name = "name",nullable = false)

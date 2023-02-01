@@ -20,6 +20,8 @@ public class BookCategory {
     //book or parascolaire
     private String type;
 
+    private short level;
+
     @OneToMany(mappedBy="category")
     @JsonBackReference(value = "categoryBooks")
     private List<Book> books;

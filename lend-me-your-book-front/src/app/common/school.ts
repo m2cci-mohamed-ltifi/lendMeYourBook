@@ -1,6 +1,6 @@
-import { Adress } from './adress';
+import { City } from './city';
 
 export class School {
   name: string;
-  adress: Adress;
+  city: City;
 }

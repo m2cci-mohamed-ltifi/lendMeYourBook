@@ -1,9 +1,9 @@
 <div class="donor">
   <form [formGroup]="donorFormGroup" (ngSubmit)="onSubmit()">
-    <legend>School information</legend>
+    <legend>معلومات المدرسة</legend>
     <div formGroupName="school" name="school" class="school form-area">
       <div class="row">
-        <label class="col-md-6"> State </label>
+        <label class="col-md-6"> ولاية </label>
         <select
           formControlName="state"
           name="state"
@@ -16,7 +16,7 @@
         </select>
       </div>
       <div class="row">
-        <label class="col-md-6"> City </label>
+        <label class="col-md-6"> المدينة </label>
         <select
           formControlName="city"
           name="city"
@@ -29,7 +29,7 @@
         </select>
       </div>
       <div class="row">
-        <label class="col-md-6"> School Name </label>
+        <label class="col-md-6"> اسم المدرسة</label>
         <input
           formControlName="name"
           type="text"
@@ -39,10 +39,10 @@
       </div>
     </div>
 
-    <legend>User information</legend>
+    <legend>معلومات المستخدم</legend>
     <div formGroupName="user" class="form-area">
       <div class="row">
-        <label class="col-md-6"> First Name </label>
+        <label class="col-md-6"> الاسم </label>
         <input
           type="text"
           formControlName="firstName"
@@ -51,7 +51,7 @@
         />
       </div>
       <div class="row">
-        <label class="col-md-6"> Last Name </label>
+        <label class="col-md-6"> اسم العائلة </label>
         <input
           formControlName="lastName"
           type="text"
@@ -60,19 +60,19 @@
         />
       </div>
       <div class="row">
-        <label class="col-md-6"> Level </label>
+        <label class="col-md-6"> مستوى الدراسة </label>
 
         <select formControlName="level" name="level">
-          <option *ngFor="let level of levels">{{ level }} year</option>
+          <option *ngFor="let level of levels">{{ level }}</option>
         </select>
       </div>
     </div>
 
-    <legend>Books information</legend>
+    <legend>معلومات عن الكتب</legend>
     <div *ngIf="books.length > 0">
       <div formGroupName="books" class="form-area">
-        <div *ngFor="let book of books; let i = index">
-          <div formGroupName="book_{{ i }}">
+        <div *ngFor="let book of books.controls; let i = index">
+          <div formGroupName="{{ i }}">
             <input
               type="text"
               formControlName="bookName"
@@ -81,18 +81,18 @@
               (keyup)="onKeyUp()"
             />
 
-            <select formControlName="bookName" name="bookName">
-              <option selected disabled>-- Please choose an option --</option>
-              <option>Exercise Book</option>
-              <option>Lecture Book</option>
-              <option>Book</option>
+            <select formControlName="bookCategory" name="bookCategory">
+              <option selected disabled>-- الرجاء تحديد خيار --</option>
+              <option>كتاب التمارين</option>
+              <option>كتاب القراءة</option>
+              <option>كتاب موازي</option>
             </select>
           </div>
         </div>
         <div class="add-button row">
           <div class="com-md-12">
             <button value="add book" (click)="addBookToFormGroup()">
-              Add a book
+              أضف كتابا
             </button>
           </div>
         </div>
@@ -100,7 +100,7 @@
     </div>
 
     <div class="text-center">
-      <button type="submit" class="btn btn-info">Submit</button>
+      <button type="submit" class="btn btn-info">إرسال</button>
     </div>
   </form>
 </div>

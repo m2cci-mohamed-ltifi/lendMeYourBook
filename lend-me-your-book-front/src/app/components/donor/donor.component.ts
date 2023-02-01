@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import {
+  FormArray,
   FormBuilder,
   FormControl,
   FormGroup,
@@ -8,7 +9,10 @@ import {
 import { Router } from '@angular/router';
 import { Book } from 'src/app/common/book';
 import { City } from 'src/app/common/city';
+import { Donation } from 'src/app/common/donation';
+import { School } from 'src/app/common/school';
 import { State } from 'src/app/common/state';
+import { User } from 'src/app/common/user';
 import { DonorService } from 'src/app/services/donor.service';
 
 @Component({
@@ -17,10 +21,9 @@ import { DonorService } from 'src/app/services/donor.service';
   styleUrls: ['./donor.component.css'],
 })
 export class DonorComponent implements OnInit, OnChanges {
-  books: Array<Book> = new Array();
   levels = [1, 2, 3, 4, 5, 6];
   donorFormGroup!: FormGroup;
-  booksFormGroup = new FormGroup({});
+  booksFormGroup = new FormArray([]);
   cities: City[];
 
   allCities: City[];
@@ -42,7 +45,7 @@ export class DonorComponent implements OnInit, OnChanges {
       user: this.formBuilder.group({
         firstName: new FormControl('', [Validators.required]),
         lastName: new FormControl('', [Validators.required]),
-        level: new FormControl(this.levels[0] + ' year'),
+        level: new FormControl(''),
       }),
 
       books: this.booksFormGroup,
@@ -57,33 +60,34 @@ export class DonorComponent implements OnInit, OnChanges {
     this.addBookToFormGroup();
   }
 
+  get books() {
+    return this.donorFormGroup.controls['books'] as FormArray;
+  }
+
   ngOnChanges() {
-    console.log(this.donorFormGroup.controls);
+    //console.log(this.donorFormGroup.controls);
   }
 
   onKeyUp() {
-    console.log(this.donorFormGroup.controls);
+    //console.log(this.donorFormGroup.controls);
   }
   addBookToFormGroup() {
-    const group: any = {};
+    const bookGroup = this.newBookGroup(new Book());
 
-    group['book_' + this.books.length] = this.newBookGroup(new Book());
+    this.books.push(bookGroup);
+    // const bookListControls = this.donorFormGroup.controls['books'];
+    // if (bookListControls instanceof FormGroup) {
+    //   this.donorFormGroup = this.formBuilder.group({
+    //     school: this.donorFormGroup.controls['school'],
+    //     user: this.donorFormGroup.controls['user'],
+    //     books: this.formBuilder.group({
+    //       ...bookListControls.controls,
+    //       ...groupBooks.controls,
+    //     }),
+    //   });
+    // }
 
-    this.books.push(new Book());
-    const groupBooks = new FormGroup(group);
-    const bookListControls = this.donorFormGroup.controls['books'];
-    if (bookListControls instanceof FormGroup) {
-      this.donorFormGroup = this.formBuilder.group({
-        school: this.donorFormGroup.controls['school'],
-        user: this.donorFormGroup.controls['user'],
-        books: this.formBuilder.group({
-          ...bookListControls.controls,
-          ...groupBooks.controls,
-        }),
-      });
-    }
-
-    console.log(this.donorFormGroup.controls);
+    //console.log(this.donorFormGroup.controls['books'].value);
   }
   newBookGroup(book: Book): FormGroup {
     const newBookGroup = new FormGroup({
@@ -93,7 +97,19 @@ export class DonorComponent implements OnInit, OnChanges {
     return newBookGroup;
   }
   onSubmit() {
-    console.log('ayoubTest');
+    const donation = new Donation();
+    const school = new School();
+    school.name = this.donorFormGroup.controls['school'].value.name;
+    school.city = this.donorFormGroup.controls['school'].value.city;
+    donation.school = school;
+    const user = new User();
+    user.firstName = this.donorFormGroup.controls['user'].value.firstName;
+    user.lastName = this.donorFormGroup.controls['user'].value.lastName;
+    user.level = this.donorFormGroup.controls['user'].value.level;
+    donation.user = user;
+    const books = this.donorFormGroup.controls['books'].value;
+    donation.books = books;
+    this.donorService.register(donation);
   }
   updateState() {
     const id = this.donorFormGroup.get('school')?.value.city.state.id;
@@ -105,7 +121,7 @@ export class DonorComponent implements OnInit, OnChanges {
   }
   updateCities() {
     const id = this.donorFormGroup.get('school')?.value.state.id;
-    console.log('ayoub' + id);
+    //console.log('ayoub' + id);
     this.cities = this.allCities.filter((city) => {
       return city.state.id === id;
     });
