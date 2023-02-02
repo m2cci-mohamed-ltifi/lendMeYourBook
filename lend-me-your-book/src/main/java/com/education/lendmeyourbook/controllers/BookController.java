@@ -26,7 +26,7 @@ public class BookController {
 
     @GetMapping
     @RequestMapping("{id}")
-    public ResponseEntity<Book> getBook(@PathVariable Long id){
+    public ResponseEntity<Book> getBook(@PathVariable Integer id){
         Optional<Book> book = bookRepository.findById(id);
         return ResponseEntity.ok(book.get());
     }
@@ -39,7 +39,7 @@ public class BookController {
     }
 
     @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
-    public void deleteBook(@PathVariable Long id){
+    public void deleteBook(@PathVariable Integer id){
         bookRepository.deleteById(id);
     }
 

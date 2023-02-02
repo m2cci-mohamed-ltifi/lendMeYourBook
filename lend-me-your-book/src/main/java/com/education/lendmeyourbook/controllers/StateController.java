@@ -25,7 +25,7 @@ public class StateController {
 
     @GetMapping
     @RequestMapping("{id}")
-    public ResponseEntity<State> getState(@PathVariable Long id){
+    public ResponseEntity<State> getState(@PathVariable Integer id){
         Optional<State> state = stateRepository.findById(id);
         return ResponseEntity.ok(state.get());
     }
@@ -49,7 +49,7 @@ public class StateController {
     }
 
     @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
-    public void deleteState(@PathVariable Long id){
+    public void deleteState(@PathVariable Integer id){
         stateRepository.deleteById(id);
     }
 

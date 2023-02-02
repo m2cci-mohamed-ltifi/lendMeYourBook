@@ -10,7 +10,7 @@ public class UserBorrowedBook {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @ManyToOne
     private Book book;

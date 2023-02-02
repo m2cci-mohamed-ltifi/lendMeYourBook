@@ -9,7 +9,7 @@ import lombok.Data;
 public class SchoolHasBook {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @ManyToOne
     private Book book;

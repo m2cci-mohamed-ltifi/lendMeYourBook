@@ -1,0 +1,28 @@
+input,
+select {
+  background-color: transparent;
+  color: white;
+  border-radius: 10px;
+  height: 40px;
+  width: 250px;
+  border-color: azure;
+  align-self: center;
+  margin: 16px;
+  display: flex;
+}
+
+label {
+  color: #ffffff;
+  align-self: center;
+  font-size: 30px;
+  text-align: start;
+  margin-left: 16px;
+}
+
+select:focus {
+  color: black;
+}
+
+select:has(option:selected) {
+  color: white;
+}

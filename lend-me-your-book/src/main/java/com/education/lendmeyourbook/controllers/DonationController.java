@@ -29,6 +29,7 @@ public class DonationController {
             this.donationService.registerDonation(donation);
             return HttpStatus.ACCEPTED;
         } catch(Exception e){
+            System.out.println(e.getMessage());
             return HttpStatus.BAD_REQUEST;
         }
     }

@@ -30,7 +30,7 @@ public class BookCategoryController {
 
     @GetMapping
     @RequestMapping("{id}")
-    public ResponseEntity<BookCategory> getBookCategory(@PathVariable Long id){
+    public ResponseEntity<BookCategory> getBookCategory(@PathVariable Integer id){
         Optional<BookCategory> bookCategory = bookCategoryRepository.findById(id);
         return ResponseEntity.ok(bookCategory.get());
     }
@@ -42,7 +42,7 @@ public class BookCategoryController {
     }
 
     @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
-    public void deleteBookCategory(@PathVariable Long id){
+    public void deleteBookCategory(@PathVariable Integer id){
         bookCategoryRepository.deleteById(id);
     }
 }

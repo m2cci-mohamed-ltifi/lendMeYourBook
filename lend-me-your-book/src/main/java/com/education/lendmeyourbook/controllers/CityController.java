@@ -29,7 +29,7 @@ public class CityController {
 
     @GetMapping
     @RequestMapping("{id}")
-    public ResponseEntity<City> getCity(@PathVariable Long id){
+    public ResponseEntity<City> getCity(@PathVariable Integer id){
         Optional<City> city = cityRepository.findById(id);
         return ResponseEntity.ok(city.get());
     }
@@ -53,7 +53,7 @@ public class CityController {
     }
 
     @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
-    public void deleteCity(@PathVariable Long id){
+    public void deleteCity(@PathVariable Integer id){
         cityRepository.deleteById(id);
     }
 }

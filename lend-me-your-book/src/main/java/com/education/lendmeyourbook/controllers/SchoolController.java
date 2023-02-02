@@ -24,7 +24,7 @@ public class SchoolController {
 
     @GetMapping
     @RequestMapping("{id}")
-    public ResponseEntity<School> getSchool(@PathVariable Long id){
+    public ResponseEntity<School> getSchool(@PathVariable Integer id){
         Optional<School> school = schoolRepository.findById(id);
         return ResponseEntity.ok(school.get());
     }

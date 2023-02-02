@@ -13,14 +13,14 @@ import java.util.List;
 public class BookCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Enumerated(EnumType.ORDINAL)
     private CategoryName name;
     //book or parascolaire
     private String type;
 
-    private short level;
+    private Integer level;
 
     @OneToMany(mappedBy="category")
     @JsonBackReference(value = "categoryBooks")

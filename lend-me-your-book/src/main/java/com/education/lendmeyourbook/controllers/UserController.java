@@ -26,7 +26,7 @@ public class UserController {
 
     @GetMapping
     @RequestMapping("{id}")
-    public ResponseEntity<User> getUser(@PathVariable Long id){
+    public ResponseEntity<User> getUser(@PathVariable Integer id){
         Optional<User> user = userRepository.findById(id);
         return ResponseEntity.ok(user.get());
     }
@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @RequestMapping(value = "{id}",method = RequestMethod.DELETE)
-    public void deleteUser(@PathVariable Long id){
+    public void deleteUser(@PathVariable Integer id){
         userRepository.deleteById(id);
     }
 

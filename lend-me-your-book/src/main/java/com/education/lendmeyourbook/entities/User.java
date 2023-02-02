@@ -13,7 +13,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Integer id;
 
     private String firstName;
 
@@ -21,9 +21,9 @@ public class User {
 
     private String email;
 
-    private Long cinNum;
+    private Integer cinNum;
 
-    private short level;
+    private Integer level;
 
     @OneToMany(mappedBy = "user")
     private List<UserBorrowedBook> borrowedBooks;

@@ -9,10 +9,12 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { DonorComponent } from './components/donor/donor.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BorrowerComponent } from './components/borrower/borrower.component';
+import { BookCardComponent } from './components/book-card/book-card.component';
 
 const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: 'donor', component: DonorComponent },
+  { path: 'borrower', component: BorrowerComponent },
   { path: '', component: WelcomeComponent, pathMatch: 'full' },
   { path: '**', component: WelcomeComponent, pathMatch: 'full' },
 ];
@@ -23,6 +25,7 @@ const routes: Routes = [
     DonorComponent,
     HeaderComponent,
     BorrowerComponent,
+    BookCardComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

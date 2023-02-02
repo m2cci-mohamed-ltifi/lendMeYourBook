@@ -1,1 +1,18 @@
-<p>borrower works!</p>
+<form [formGroup]="borrowerFormGroup">
+  <div class="row d-flex flex-row-reverse">
+    <label class="col-md-6"> الرجاء اختيار الولاية</label>
+    <select formControlName="city" name="city" class="col-md-6">
+      <option *ngFor="let city of cities" [ngValue]="city">
+        {{ city.name }}
+      </option>
+    </select>
+  </div>
+  <div class="row d-flex flex-row-reverse">
+    <label class="col-md-6"> الرجاء اختيار المدينة</label>
+    <select formControlName="city" name="city" class="col-md-6">
+      <option *ngFor="let city of cities" [ngValue]="city">
+        {{ city.name }}
+      </option>
+    </select>
+  </div>
+</form>
