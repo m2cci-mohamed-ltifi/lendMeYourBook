@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Book } from 'src/app/common/book';
 import { City } from 'src/app/common/city';
 import { BorrowerService } from 'src/app/services/borrower.service';
 
@@ -11,6 +12,7 @@ import { BorrowerService } from 'src/app/services/borrower.service';
 export class BorrowerComponent implements OnInit {
   cities: City[];
   allCities: City[];
+  books: Book[];
   borrowerFormGroup: FormGroup;
   constructor(
     private borrowerService: BorrowerService,
@@ -25,6 +27,9 @@ export class BorrowerComponent implements OnInit {
     this.borrowerService.getCities().subscribe((cities) => {
       this.cities = cities;
       this.allCities = cities;
+    });
+    this.borrowerService.getBooks().subscribe((books) => {
+      this.books = books;
     });
   }
 }

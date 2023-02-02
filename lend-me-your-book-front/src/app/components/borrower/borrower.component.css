@@ -26,3 +26,15 @@ select:focus {
 select:has(option:selected) {
   color: white;
 }
+
+.books-display {
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  line-height: 150px;
+}

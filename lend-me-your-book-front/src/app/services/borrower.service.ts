@@ -16,4 +16,8 @@ export class BorrowerService {
   getStates(): Observable<any> {
     return this.http.get(this.apiUrl + 'states');
   }
+
+  getBooks(): Observable<any> {
+    return this.http.get(this.apiUrl + 'books');
+  }
 }

@@ -15,4 +15,11 @@
       </option>
     </select>
   </div>
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let book of books" class="col-md-4 mx-auto my-4">
+        <app-book-card [book]="book"></app-book-card>
+      </div>
+    </div>
+  </div>
 </form>

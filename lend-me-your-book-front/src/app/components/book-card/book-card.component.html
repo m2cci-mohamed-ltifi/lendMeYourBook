@@ -1,1 +1,18 @@
-<p>book-card works!</p>
+<div class="card">
+  <img
+    *ngIf="book.image"
+    class="card-img-top"
+    [src]="book.image"
+    alt="assets/images/default-card-image.jfif"
+  />
+  <img
+    *ngIf="!book.image"
+    class="card-img-top"
+    src="assets/images/default-card-image.jfif"
+  />
+  <div class="card-body">
+    <h3 class="card-title">{{ book.name }}</h3>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary">Add to cart</a>
+  </div>
+</div>
